@@ -76,14 +76,18 @@ function largest(arr) {
 }
 
 function compare(a1,a2) {
-  for (var i=0; i<a1.length; i++) {
-    if (a1[i] == a2[i] == true){
-      return true;
-    }
-    else {
-      return false;
+  var identical = true;
+  if (a1.length === a2.length) {
+    for (var i=0; i<a1.length; i++) {
+      if (a1[i] != a2[i]){
+        identical = false;
+      }
     }
   }
+  else {
+    identical = false;
+  }
+  return identical;
 }
 
 function addToAll(arr,p) {
